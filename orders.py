@@ -14,7 +14,20 @@ finally:
     print("Your task is to read this data and display as list")
 # Second iteration
 # Your task is to read this data and display as list
-
 file = open("orders.txt")
-print(file.read())  # .read reads the file and displays as a list
+print(file.read())
+
+# Third iteration
+def read_file(filename):
+    try:
+        file = open(filename)
+        print("File has been opened")
+    except FileNotFoundError as errormsg:
+        print(f"File not found, error code is:  {errormsg}")
+    finally:
+        print(filename)
+        print(file.read())
+
+
+read_file("orders.txt")
 
