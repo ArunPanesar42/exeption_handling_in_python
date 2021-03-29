@@ -18,16 +18,27 @@ file = open("orders.txt")
 print(file.read())
 
 # Third iteration
-def read_file(filename):
+def open_using_with_and_print(file):
     try:
-        file = open(filename)
-        print("File has been opened")
-    except FileNotFoundError as errormsg:
-        print(f"File not found, error code is:  {errormsg}")
+        with open(file, "r") as file:
+            for line in file.readlines():
+                print(line.rstrip('\n'))
+    except FileNotFoundError:
+        print("file cannot be found or directory is incorrect, please check the details provided")
+        raise
     finally:
-        print(filename)
-        print(file.read())
+        print("\nPlease chose the items from the list  and enjoy your HAPPY MEAL")
+open_using_with_and_print("orders.txt")
 
+# add to list
+def write_to_file(file, order_item):
+    try:
+        with open(file, "w") as file:
+            file.write(order_item + '\n')
+    except FileNotFoundError:
+        print("file cannot be found or directory is incorrect, please check the details provided")
+        raise
 
-read_file("orders.txt")
+write_to_file("orders.txt", "Chocolate")
+
 

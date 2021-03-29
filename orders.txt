@@ -1,4 +1,1 @@
-chips
-chicken
-ice cream
-pizza
+Chocolate
