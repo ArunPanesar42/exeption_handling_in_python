@@ -57,3 +57,7 @@ def write_to_file(file, order_item):
 
 write_to_file("order.txt", "Ice Cream")
 ```
+
+### CRUD
+
+- Crud stands for `create`,`read`,`update`,`delete`
